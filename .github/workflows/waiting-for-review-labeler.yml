@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Apply Label
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: yarn install
       - name: Build apply_needs_review_label
         run: ACTION_NAME=apply_needs_review_label yarn build_action
       - name: Run apply_needs_review_label
