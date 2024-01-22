@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "build_action": "ncc build .github/actions/$ACTION_NAME/src/run.ts -o .github/actions/$ACTION_NAME/dist"
+    "build_action": "ncc build .github/actions/$ACTION_NAME/src/apply_needs_review_label.ts -o .github/actions/$ACTION_NAME/dist"
   },
   "dependencies": {
     "@actions/core": "1.6.0",
