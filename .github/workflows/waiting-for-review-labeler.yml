@@ -20,7 +20,7 @@ jobs:
       - name: Build apply_needs_review_label
         run: ACTION_NAME=apply_needs_review_label yarn build_action
       - name: Run apply_needs_review_label
-        uses: ./.github/actions/apply_needs_review_label
+        uses: ./github/actions/apply_needs_review_label
         with:
           hours-before-add-label: 1
           label-name: 'needs-review'
