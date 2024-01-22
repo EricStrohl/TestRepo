@@ -3,7 +3,7 @@ name: Waiting For Review Labeler
 on:
   schedule:
   # Crontab Every Hour
-  - cron: '0 * * * *'
+  - cron: '*/5 * * * *'
 
 permissions:
   pull-requests: write
@@ -13,10 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     name: Apply Label
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: yarn install
       - name: Build apply_needs_review_label
         run: ACTION_NAME=apply_needs_review_label yarn build_action
       - name: Run apply_needs_review_label
-        uses: ./github/actions/apply_needs_review_label
+        uses: ./.github/actions/apply_needs_review_label
         with:
           hours-before-add-label: 1
           label-name: 'needs-review'
