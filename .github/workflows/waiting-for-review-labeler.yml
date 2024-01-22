@@ -3,7 +3,7 @@ name: Waiting For Review Labeler
 on:
   schedule:
   # Crontab Every Hour
-  - cron: '*/1 * * * *'
+  - cron: '*/5 * * * *'
 
 permissions:
   pull-requests: write
