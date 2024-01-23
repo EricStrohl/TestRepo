@@ -137,6 +137,7 @@ export async function run(): Promise<void> {
 
     console.log("Context: ", context)
     console.log("Context.Repo: ", context.repo)
+    console.log("Context.Repo.Repo: ", context.repo.repo)
     for (const pullRequest of targetPullRequests) {
       pullRequest?.number &&
         (await octokit.rest.issues.addLabels({
