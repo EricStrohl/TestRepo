@@ -135,6 +135,8 @@ export async function run(): Promise<void> {
     core.debug('get target pull request data:')
     core.debug(JSON.stringify(targetPullRequests))
 
+    console.log("Context: ", context)
+    console.log("Context.Repo: ", context.repo)
     for (const pullRequest of targetPullRequests) {
       pullRequest?.number &&
         (await octokit.rest.issues.addLabels({
